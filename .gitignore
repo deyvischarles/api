@@ -1,0 +1,12 @@
+# Dependency directories
+node_modules/
+
+# Production
+build/
+
+# Variables file
+.env
+
+# Folders
+tmp/uploads/*
+!tmp/uploads/.gitkeep
