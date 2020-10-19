@@ -1,11 +1,11 @@
-const hash = require('../config/hash.json')
 const jwt = require('jsonwebtoken')
+const hash = process.env.SECRET_KEY
 
 const token = function() {
     return {
         generate: (params = {}) =>
         {
-            return jwt.sign(params, hash.secret, {
+            return jwt.sign(params, hash, {
                 expiresIn: 86400
             })
         }

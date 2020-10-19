@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken')
-const hash = require('../config/hash.json')
+const hash = process.env.SECRET_KEY
 
 module.exports = (req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*')
@@ -20,7 +20,7 @@ module.exports = (req, res, next) => {
             if (!/^Bearer$/i.test(scheme)) {
                 res.status(401).send({message: 'Token desconhecido!'})
             } else {
-                jwt.verify(token, hash.secret, (err, decoded) => {
+                jwt.verify(token, hash, (err, decoded) => {
                     if (err) {
                         res.status(401).send({ message: 'Token inválido!'})
                     } else {
