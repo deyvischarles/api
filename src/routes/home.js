@@ -4,7 +4,7 @@ const route = express.Router()
 
 route.get('/', async (req, res) => {
 	res.send({
-		message: 'Bem-vindo(a) a Api da Supermachine'
+		message: 'Bem-vindo(a) a Api Xmachine (by Deyvis Charles)'
 	})
 })
 
